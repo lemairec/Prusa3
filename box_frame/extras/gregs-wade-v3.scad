@@ -62,9 +62,9 @@ wade(hotend_mount=default_extruder_mount,
 //Place for printing
 
 //translate([50,56,15.25]) // This is the translation for the 3mm version.
-////translate([50,56,13.92]) // This is the translation for the 1.75mm version.
+//translate([50,56,13.92]) // This is the translation for the 1.75mm version.
 //rotate(180)
-translate([-20,0,15.25])
+translate([-20,0,13.92])
 rotate([0,-90,0])
 //
 ////Place for assembly.
