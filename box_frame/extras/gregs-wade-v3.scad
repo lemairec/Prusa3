@@ -24,7 +24,15 @@ geeksbase_mount=512;
 malcolm_extrusion_mount=1024;	//broken
 
 //default_extruder_mount=malcolm_extrusion_mount;
-default_extruder_mount=groovemount;
+//default_extruder_mount=groovemount;
+//default_extruder_mount=peek_reprapsource_mount;
+//default_extruder_mount=arcol_mount;
+//default_extruder_mount=mendel_parts_v6_mount;
+//default_extruder_mount=grrf_peek_mount;
+//default_extruder_mount=wildseyed_mount;
+//default_extruder_mount=geared_extruder_nozzle;
+default_extruder_mount=jhead_mount;
+//default_extruder_mount=geeksbase_mount;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -172,7 +180,7 @@ hole_for_608=22.3;
 block_top_right=[wade_block_width,wade_block_height];
 
 layer_thickness=layer_height;
-filament_diameter=3;
+filament_diameter=1.75;
 filament_feed_hole_d=(filament_diameter*1.1)/cos(180/8);
 hobbing_depth=2;
 echo ("filament_feed_hole_d", filament_feed_hole_d);
@@ -876,3 +884,4 @@ module malcolm_extrusion_holes ()
 		}
 	}
 }
+
