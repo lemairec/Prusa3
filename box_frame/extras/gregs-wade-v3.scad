@@ -832,7 +832,7 @@ module wildseyed_mount_holes(insulator_d=12.7)
 	for (hole=[-1,1])
 	rotate(90,[1,0,0])
 	translate([hole*(extruder_recess_d/2-1.5),3+1.5,-wade_block_depth/2-1])
-	cylinder(r=1.5,h=wade_block_depth+2,$fn=10);
+	cylinder(r=1.7,h=wade_block_depth+2,$fn=10);
 }
 
 module geeksbase_holes ()
