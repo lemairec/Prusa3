@@ -35,7 +35,7 @@ module leftfront(thru = false){
 
         difference(){
             if (thru == false) {
-                translate([0,0,14-board_thickness]) cube_fillet([22, 22, 40 + board_thickness + xy_delta], vertical=[4,4,4,4], top=[2,6,6,6], fn=8);
+                translate([0,0,14-board_thickness]) cube_fillet([22, 22, 41.5 + board_thickness + xy_delta], vertical=[4,4,4,4], top=[2,6,6,6], fn=8);
             } else {
                 translate([0,0,14-board_thickness]) cube_fillet([22, 22, 41.5 + board_thickness + xy_delta], vertical=[4,4,4,4], top=[2,4,9,4], fn=8);
             }
