@@ -127,23 +127,3 @@ module x_end_idler(){
 module x_tensioner(len=68, idler_height=max(idler_bearing[0], 16)) {
     idlermount(len=len, rod=m4_diameter / 2 + 0.5, idler_height=idler_height, narrow_len=47, narrow_width=idler_width + 2 - single_wall_width);
 }
-
-
-translate([-40, 0, 4 - bushing_xy[0]]) x_tensioner();
-translate([0, -80, 0]) mirror([1, 0, 0]) x_end_idler(thru=true);
-translate([-50, 0, 0]) mirror([1, 0, 0]) translate([-50, 0, 0])
-    x_end_motor();
-
-module pushfit_rod(diameter, length){
-    cylinder(h = length, r=diameter/2, $fn=30);
-    translate([0, -diameter/4, length/2]) cube_fillet([diameter, diameter/2, length], vertical = [0, 0, 1, 1], center = true, $fn=4);
-
-    translate([0, -diameter/2-1.2, length/2]) cube([diameter - 1, 1, length], center = true);
-}
-
-
-if (idler_bearing[3] == 1) {  // bearing guides
-    translate([-39,  -60 - idler_bearing[0] / 2, 4 - bushing_xy[0]]) rotate([0, 0, 55]) {
-        render() bearing_assy();
-    }
-}
