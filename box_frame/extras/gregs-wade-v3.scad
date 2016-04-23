@@ -219,7 +219,7 @@ idler_short_side=wade_block_depth-2;
 idler_hinge_r=m3_diameter/2+3.5;
 idler_hinge_width=6.5;
 idler_end_length=(idler_height-2)+5;
-idler_mounting_hole_diameter=m4_diameter+0.25;
+idler_mounting_hole_diameter=m3_diameter+0.25;
 idler_mounting_hole_elongation=1;
 idler_long_top=idler_mounting_hole_up+idler_mounting_hole_diameter/2+idler_mounting_hole_elongation+2.5;
 idler_long_bottom=idler_fulcrum_offset;
@@ -458,7 +458,7 @@ echo("bhmh", mounting_holes)
 					-large_wheel_translation[1]-1-base_thickness/2,wade_block_depth/2])
 				rotate([-90,0,0])
 				rotate(360/16)
-				cylinder(r=m4_diameter/2,h=base_thickness+2,$fn=8);	
+				cylinder(r=m3_diameter/2,h=base_thickness+2,$fn=8);	
 	
 				translate([-filament_feed_hole_offset+25*((mount<1)?1:-1),
 					-large_wheel_translation[1],
@@ -466,7 +466,7 @@ echo("bhmh", mounting_holes)
 				rotate([-90,0,0])
 			//fixme: (correct height
 				//cylinder(r=m4_nut_diameter/2,h=base_thickness,$fn=6);	
-				cylinder(r=m4_nut_diameter/2,h=29.3,$fn=6);
+				cylinder(r=m3_nut_diameter/2,h=29.3,$fn=6);
 			}
 
 	}
@@ -481,13 +481,13 @@ echo("bhmh", mounting_holes)
 		{
 			rotate([0,0,180/8])
 			translate([0,0,-1])
-			cylinder(r=m4_diameter/2,h=wade_block_depth+6,$fn=8);	
+			cylinder(r=m3_diameter/2,h=wade_block_depth+6,$fn=8);	
 			rotate([0,0,180/6])
 			translate([0,0,wade_block_width-idler_nut_trap_depth])
-			cylinder(r=m4_nut_diameter/2,h=idler_nut_thickness,$fn=6);	
+			cylinder(r=m3_nut_diameter/2,h=idler_nut_thickness,$fn=6);	
 
 			translate([0,10/2,wade_block_width-idler_nut_trap_depth+idler_nut_thickness/2])
-			cube([m4_nut_diameter*cos(30),10,idler_nut_thickness],center=true);
+			cube([m3_nut_diameter*cos(30),10,idler_nut_thickness],center=true);
 		}
 	}
 }
@@ -745,7 +745,7 @@ module peek_reprapsource_holes ()
 	// Mounting holes to affix the extruder into the recess.
 	translate([0,0,min(extruder_recess_h/2, base_thickness/2)])
 	rotate([-90,0,0])
-	cylinder(r=m4_diameter/2-0.5/* tight */,h=wade_block_depth+2,center=true); 
+	cylinder(r=m3_diameter/2-0.5/* tight */,h=wade_block_depth+2,center=true); 
 }
 
 //arcol_mount_holes();
@@ -758,14 +758,14 @@ module arcol_mount_holes()
 	translate([hole_separation/2*mount,-7,0]) 
 	{
 		translate([0,0,-1])
-		cylinder(r=m4_diameter/2,h=base_thickness+2,$fn=8);
+		cylinder(r=m3_diameter/2,h=base_thickness+2,$fn=8);
 		
 		translate([0,0,base_thickness/2])
 		//rotate(hole_axis_rotation)
 		{
-			cylinder(r=m4_nut_diameter/2,h=base_thickness/2+hole_slot_height,$fn=6);
-			translate([0,-m4_nut_diameter,hole_slot_height/2+base_thickness/2]) 
-			cube([m4_nut_diameter,m4_nut_diameter*2,hole_slot_height],
+			cylinder(r=m3_nut_diameter/2,h=base_thickness/2+hole_slot_height,$fn=6);
+			translate([0,-m3_nut_diameter,hole_slot_height/2+base_thickness/2]) 
+			cube([m3_nut_diameter,m3_nut_diameter*2,hole_slot_height],
 			center=true);
 		}
 	}
@@ -784,23 +784,7 @@ module mendel_parts_v6_holes (insulator_d=12.7)
 	translate([0,0,-1])
 	cylinder(r=extruder_recess_d/2,h=extruder_recess_h+1); 
 	
-	for(mount=[-1,1])
-	rotate([0,0,hole_axis_rotation+90+90*mount])
-	translate([hole_separation/2,0,0])
-	{
-		translate([0,0,-1])
-		cylinder(r=m4_diameter/2,h=base_thickness+2,$fn=8);
-
-		translate([0,0,base_thickness/2])
-		rotate(-hole_axis_rotation+180)
-		{
-//			rotate(30)
-			cylinder(r=m4_nut_diameter/2,h=base_thickness/2+hole_slot_height,$fn=6);
-			translate([0,-m4_nut_diameter,hole_slot_height/2+base_thickness/2]) 
-			cube([m4_nut_diameter,m4_nut_diameter*2,hole_slot_height],
-					center=true);
-		}
-	}
+	
 }
 
 //grrf_peek_mount_holes();
