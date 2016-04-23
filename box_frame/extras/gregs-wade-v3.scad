@@ -191,7 +191,7 @@ filament_feed_hole_offset=8/2-hobbing_depth+filament_diameter/2;
 echo ("filament_feed_hole_offset", filament_feed_hole_offset);
 
 idler_nut_trap_depth=7.5;
-idler_nut_thickness=4;
+idler_nut_thickness=3;
 
 gear_separation=7.4444+32.0111+0.25;
 
