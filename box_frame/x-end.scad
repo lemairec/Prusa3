@@ -127,3 +127,11 @@ module x_end_idler(){
 module x_tensioner(len=68, idler_height=max(idler_bearing[0], 16)) {
     idlermount(len=len, rod=m4_diameter / 2 + 0.5, idler_height=idler_height, narrow_len=47, narrow_width=idler_width + 2 - single_wall_width);
 }
+
+module pushfit_rod(diameter, length){
+    cylinder(h = length, r=diameter/2, $fn=30);
+    translate([0, -diameter/4, length/2]) cube_fillet([diameter, diameter/2, length], vertical = [0, 0, 1, 1], center = true, $fn=4);
+
+    translate([0, -diameter/2-1.2, length/2]) cube([diameter - 1, 1, length], center = true);
+}
+
