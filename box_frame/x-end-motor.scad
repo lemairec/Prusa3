@@ -26,14 +26,17 @@ module corner(l_corner, h_corner, lg_corner){
 }
 
 x = 28;
+y = -7;
+z = 55;
 union(){
     x_end_motor();
+    translate([-23, y, 60]) cube([x-15,14,5]);
     difference(){
-        translate([-6 - x, 11, 50]) cube([x,14,10]);
-        translate([-3 - x, 11 + 7, 50.3]) cylinder(12, 1.7, 1.7, $fn=20);
-        translate([-3- x-3.4, 11 + 7 -3.4, 49 + 4]) cube([6.8, 6.8, 3]);
+        translate([-6 - x, y, z]) cube([x-15,14,10]);
+        translate([-3 - x, y + 7, z + 0.3]) cylinder(12, 1.7, 1.7, $fn=20);
+        translate([-3- x-3.4, y + 7 -3.4, z + 3]) cube([6.8, 6.8, 3]);
         
     }
-    translate([-6 - x + 12, 11, 50]) mirror([1,0,1])corner(12, 12, 2);
-    translate([-6 - x + 14, 24, 50]) mirror([1,0,1])corner(14, 14, 1);
+    translate([-6 - x + 12, y, z]) mirror([1,0,1])corner(12, 12, 2);
+    translate([-6 - x + 14, y + 13, z]) mirror([1,0,1])corner(14, 14, 1);
 }
