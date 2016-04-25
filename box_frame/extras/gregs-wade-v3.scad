@@ -45,17 +45,6 @@ default_mounting_holes=mounting_holes_symmetrical;
 wade(hotend_mount=default_extruder_mount,
 	mounting_holes=default_mounting_holes);
 
-////CarriageVisualisation
-//translate([-8.5,20,base_extra_depth+wade_block_depth+10]) rotate([-90,180,-90]) %import("../output/x-carriage.stl");
-%translate(large_wheel_translation) {
-	translate([0,0,-5])import("../output/wade-big-h.stl");
-	rotate([0,0,25]) translate([gear_separation,0,-1]) {
-		rotate([180,0,0]) import("../output/wade-small-h.stl");
-		rotate([0,0,-25]) translate([0,0,2]) {//nema17(places=[1,1,1,1], holes=true, shadow=5, $fn=7, h=8);
-		}
-	}
-}
-
 //translate([-14,39,0])
 //bearing_washer();
 
