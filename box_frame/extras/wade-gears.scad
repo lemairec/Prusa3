@@ -61,8 +61,9 @@ module small(){
         }
         //bore
         translate([0, 0, -gear_width / 2 + 0.1]) cylinder(r=5.25 / 2, h=gear_width + 9.2);
-
+        
         translate([0, 0, gear_width / 2 + 4.5]) rotate([0, 90, 0]) {
+            translate([0, 0, gear_width / 2 + 3.5]) cylinder(r=8 / 2, h=20);
             cylinder(r=m3_diameter / 2, h=20);
             translate([0, 0, 5]) nut(m3_nut_diameter, 2.5, false);
             translate([-10, -m3_nut_diameter / 2, 5]) cube([10, m3_nut_diameter, 2.5]);
