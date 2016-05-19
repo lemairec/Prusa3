@@ -28,7 +28,7 @@ module corner(l_corner, h_corner, lg_corner){
 x = 28;
 y = -7;
 z = 55;
-union(){
+ mirror([1, 0, 0]) union(){
     x_end_motor();
     translate([-23, y, 60]) cube([x-15,14,5]);
     difference(){

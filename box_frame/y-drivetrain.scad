@@ -96,9 +96,3 @@ module idlermount(len=45, narrow_len=0, narrow_width=0, rod=threaded_rod_diamete
 
 motorholder();
 translate([32, 25, 0])  idlermount();
-
-if (idler_bearing[3] == 1) {
-    translate([0, -12 - idler_bearing[0] / 2, 0]) {
-        render() bearing_assy();
-    }
-}
